@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace FriendLetter
+namespace TamagotchiGame
 {
   class Program
   {
@@ -9,12 +9,13 @@ namespace FriendLetter
     {
       WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-      builder.Services.AddControllersWitchViews();
+      builder.Services.AddControllersWithViews();
 
       WebApplication app = builder.Build();
 
       app.UseHttpsRedirection();
       app.UseRouting();
+      app.UseStaticFiles();
 
       app.MapControllerRoute(
         name: "default",
