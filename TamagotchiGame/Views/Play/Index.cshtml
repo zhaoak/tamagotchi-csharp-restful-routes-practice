@@ -15,6 +15,9 @@ Layout = "_Layout";
     <li class="petTile">
       <a href="/play/@pet.Id">@pet.Name</a>
       <p>Food: @pet.food / @Tamagotchi.food_max</p>
+      <form action="/play/@pet.Id/feed" method="post">
+        <button type="submit">Feed</button>
+      </form>
     </li>
     }
     @if (Model.Count == 0)

@@ -30,6 +30,11 @@ namespace TamagotchiGame.Models
         pet.food = pet.food - 2;
       }
       _instances[Id - 1].food += 7; // mechanically +5, but we compensate for the global -2 food
+
+      if (_instances[Id - 1].food > Tamagotchi.food_max)
+      {
+        _instances[Id - 1].food = Tamagotchi.food_max; // 
+      }
     }
 
     public static void Sleep(int Id) {

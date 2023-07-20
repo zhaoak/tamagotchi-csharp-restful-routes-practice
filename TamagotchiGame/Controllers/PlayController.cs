@@ -38,5 +38,10 @@ public class PlayController : Controller
   }
 
   // feeding tamagotchis POSTs to here
-  //
+  [HttpPost("/play/{id}/feed")]
+  public ActionResult Feed(int id)
+  {
+    Tamagotchi.Feed(id + 1); // Feed function expects index to start from 1
+    return RedirectToAction("Index");
+  }
 }
