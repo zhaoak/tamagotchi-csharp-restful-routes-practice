@@ -13,6 +13,21 @@ written by Allie Zhao
 
 ## Setup
 
+### To run app:
+
+- clone repository to location of your choice
+- ensure .NET 6 SDK is installed and correctly configured
+- navigate to `TamagotchiGame` directory
+- in your terminal, enter `dotnet run`
+- in your browser, open `http://localhost:5001`
+
+### To run tests:
+
+- clone repository
+- ensure .NET 6 SDK is installed and configured
+- navigate to `TamagotchiGame.Tests` directory
+- in your terminal, enter `dotnet test`
+
 
 ## License
 
