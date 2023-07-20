@@ -45,6 +45,11 @@ namespace TamagotchiGame.Models
       return _instances[Id];
     }
 
+    public static List<Tamagotchi> GetAll()
+    {
+      return _instances;
+    }
+
     public static void ClearAll()
     {
       _instances.Clear();
