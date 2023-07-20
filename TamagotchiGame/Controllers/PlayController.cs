@@ -13,4 +13,19 @@ public class PlayController : Controller
     List<Tamagotchi> allTamagotchis = Tamagotchi.GetAll();
     return View(allTamagotchis);
   }
+
+  // adopt a new tamagotchi page
+  [HttpGet("/play/new")]
+  public ActionResult NewPet()
+  {
+    return View();
+  }
+
+  // new tamagotchis POST-ed here
+  [HttpPost("/play")]
+  public ActionResult Adopt(string newPetName)
+  {
+    Tamagotchi newPet = new Tamagotchi(newPetName);
+    return RedirectToAction("Index");
+  }
 }

@@ -10,8 +10,8 @@
   @foreach (Tamagotchi pet in Model)
   {
     <li>
-      <h5>@pet.Name</h5>
-      <p><em>Food: </em>@pet.food / @Tamagotchi.food_max</p>
+      <p>@pet.Name</p>
+      <p>Food: @pet.food / @Tamagotchi.food_max</p>
     </li>
   }
   @if (Model.Count == 0)

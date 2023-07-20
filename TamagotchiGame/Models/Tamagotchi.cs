@@ -20,8 +20,8 @@ namespace TamagotchiGame.Models
       food = 10;
       happiness = 20;
       sleep = 20;
-      _instances.Add(this);
       Id = _instances.Count;
+      _instances.Add(this);
     }
 
     public static void Feed(int Id) {
