@@ -6,9 +6,9 @@ namespace TamagotchiGame.Models
   {
     public string Name { get; set; }
     public int food { get; set; }
-    public int happiness { get; }
-    public int sleep { get; }
-    public int Id { get; }
+    public int happiness { get; set; }
+    public int sleep { get; set; }
+    public int Id { get; set; }
 
     private static List<Tamagotchi> _instances = new List<Tamagotchi> {};
     public static int food_max { get; } = 20;
@@ -29,11 +29,11 @@ namespace TamagotchiGame.Models
       {
         pet.food = pet.food - 2;
       }
-      _instances[Id - 1].food += 7; // mechanically +5, but we compensate for the global -2 food
+      _instances[Id].food += 7; // mechanically +5, but we compensate for the global -2 food
 
-      if (_instances[Id - 1].food > Tamagotchi.food_max)
+      if (_instances[Id].food > Tamagotchi.food_max)
       {
-        _instances[Id - 1].food = Tamagotchi.food_max; // 
+        _instances[Id].food = Tamagotchi.food_max; // 
       }
     }
 
@@ -58,6 +58,27 @@ namespace TamagotchiGame.Models
     public static void ClearAll()
     {
       _instances.Clear();
+    }
+
+    public static void Euthanize(int id)
+    {
+      _instances[id].food = 0;
+      _instances[id].sleep = 0;
+      _instances[id].happiness = 0;
+    }
+
+    // abandon your pet, removing it from list
+    // you monster
+    public static void Abandon(int id)
+    {
+      _instances.RemoveAt(id);
+      foreach (Tamagotchi pet in _instances)
+      {
+        if (pet.Id > id)
+        {
+          pet.Id--;
+        }
+      }
     }
   }
 }

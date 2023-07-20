@@ -14,9 +14,11 @@ Layout = "_Layout";
     {
     <li class="petTile">
       <a href="/play/@pet.Id">@pet.Name</a>
-      <p>Food: @pet.food / @Tamagotchi.food_max</p>
       @if (pet.food > 0 && pet.sleep > 0 && pet.happiness > 0)
       {
+      <p>Food: @pet.food / @Tamagotchi.food_max</p>
+      <p>Sleep: @pet.sleep / @Tamagotchi.sleep_max</p>
+      <p>Happy: @pet.happiness / @Tamagotchi.happiness_max</p>
       <form action="/play/@pet.Id/feed" method="post">
         <button type="submit">Feed</button>
       </form>

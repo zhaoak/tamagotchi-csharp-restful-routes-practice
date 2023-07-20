@@ -41,7 +41,22 @@ public class PlayController : Controller
   [HttpPost("/play/{id}/feed")]
   public ActionResult Feed(int id)
   {
-    Tamagotchi.Feed(id + 1); // Feed function expects index to start from 1
+    Tamagotchi.Feed(id);
+    return RedirectToAction("Index");
+  }
+
+  // abandonment confirmation page
+  [HttpGet("/play/{id}/abandon")]
+  public ActionResult Abandon(int id)
+  {
+    return View(Tamagotchi.Find(id));
+  }
+
+  // abandoning tamagotchi POSTs to here
+  [HttpPost("/play/{id}/abandon")]
+  public ActionResult AbandonConfirmed(int id)
+  {
+    Tamagotchi.Abandon(id);
     return RedirectToAction("Index");
   }
 }

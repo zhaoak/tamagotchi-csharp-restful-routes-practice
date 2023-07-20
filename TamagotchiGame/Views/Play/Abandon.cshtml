@@ -1,0 +1,13 @@
+@{
+Layout = "_Layout";
+}
+
+@using TamagotchiGame.Models;
+
+<h2>Get rid of Pet @Model.Name?</h2>
+
+<form action="/play/@Model.Id/abandon" method="post">
+  <button type="submit">Yes Please</button>
+</form>
+
+<a href="/play">No Thank You Please</a>
