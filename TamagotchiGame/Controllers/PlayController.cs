@@ -28,4 +28,15 @@ public class PlayController : Controller
     Tamagotchi newPet = new Tamagotchi(newPetName);
     return RedirectToAction("Index");
   }
+
+  // detail page for individual tamagotchis
+  [HttpGet("/play/{id}")]
+  public ActionResult Show(int id)
+  {
+    Tamagotchi foundPet = Tamagotchi.Find(id);
+    return View(foundPet);
+  }
+
+  // feeding tamagotchis POSTs to here
+  //
 }

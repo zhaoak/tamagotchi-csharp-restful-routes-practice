@@ -1,0 +1,8 @@
+.petTile {
+  display: flex;
+  flex-flow: column nowrap;
+  border: 3px double grey;
+  justify-content: flex-start;
+  align-items: center;
+}
+

@@ -1,0 +1,13 @@
+@{
+Layout = "_Layout";
+}
+
+@using TamagotchiGame.Models;
+
+<h2>@Model.Name</h2>
+
+<p>Food: @Model.food / @Tamagotchi.food_max</p>
+<p>Sleep: @Model.sleep / @Tamagotchi.sleep_max</p>
+<p>Happy: @Model.happiness / @Tamagotchi.happiness_max</p>
+
+<a href="/play">Back To Tammy Page</a>
